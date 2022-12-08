@@ -52,11 +52,13 @@ if selected_collection == 'Azuki':
                 name_scores.append(name_score)
 
             max_score = max(scores)
-
-            for i in range(len(filenames_azuki)):
-                if name_scores[i][1] == max_score:
-                    final_nft = name_scores[i][0][:-4]
-                    st.subheader(final_nft)
+            if max_score < 0.8:
+                st.subheader('Please upload a better quality image!')
+            else:
+                for i in range(len(filenames_azuki)):
+                    if name_scores[i][1] == max_score:
+                        final_nft = name_scores[i][0][:-4]
+                        st.subheader(final_nft)
 
 if selected_collection == 'Doodles':
     filenames_doodles = os.listdir('Doodles')
@@ -83,11 +85,13 @@ if selected_collection == 'Doodles':
                 name_scores.append(name_score)
 
             max_score = max(scores)
-
-            for i in range(len(filenames_doodles)):
-                if name_scores[i][1] == max_score:
-                    final_nft = name_scores[i][0][:-4]
-                    st.subheader(final_nft)
+            if max_score < 0.8:
+                st.subheader('Please upload a better quality image!')
+            else:
+                for i in range(len(filenames_doodles)):
+                    if name_scores[i][1] == max_score:
+                        final_nft = name_scores[i][0][:-4]
+                        st.subheader(final_nft)
 
 if selected_collection == 'Moonbirds':
     filenames_mb = os.listdir('Moonbirds')
@@ -114,11 +118,13 @@ if selected_collection == 'Moonbirds':
                 name_scores.append(name_score)
 
             max_score = max(scores)
-
-            for i in range(len(filenames_mb)):
-                if name_scores[i][1] == max_score:
-                    final_nft = name_scores[i][0][:-4]
-                    st.subheader(final_nft)
+            if max_score < 0.8:
+                st.subheader('Please upload a better quality image!')
+            else:
+                for i in range(len(filenames_mb)):
+                    if name_scores[i][1] == max_score:
+                        final_nft = name_scores[i][0][:-4]
+                        st.subheader(final_nft)
 
 
 if selected_collection == 'BAYC':
@@ -146,11 +152,13 @@ if selected_collection == 'BAYC':
                 name_scores.append(name_score)
 
             max_score = max(scores)
-
-            for i in range(len(filenames_bayc)):
-                if name_scores[i][1] == max_score:
-                    final_nft = name_scores[i][0][:-4]
-                    st.subheader(final_nft)
+            if max_score < 0.8:
+                st.subheader('Please upload a better quality image!')
+            else:
+                for i in range(len(filenames_bayc)):
+                    if name_scores[i][1] == max_score:
+                        final_nft = name_scores[i][0][:-4]
+                        st.subheader(final_nft)
 
 
 if selected_collection == 'WoW':
@@ -178,11 +186,13 @@ if selected_collection == 'WoW':
                 name_scores.append(name_score)
 
             max_score = max(scores)
-
-            for i in range(len(filenames_wow)):
-                if name_scores[i][1] == max_score:
-                    final_nft = name_scores[i][0][:-4]
-                    st.subheader(final_nft)
+            if max_score < 0.8:
+                st.subheader('Please upload a better quality image!')
+            else:
+                for i in range(len(filenames_wow)):
+                    if name_scores[i][1] == max_score:
+                        final_nft = name_scores[i][0][:-4]
+                        st.subheader(final_nft)
 
 
 if selected_collection == 'CloneX':
@@ -210,11 +220,13 @@ if selected_collection == 'CloneX':
                 name_scores.append(name_score)
 
             max_score = max(scores)
-
-            for i in range(len(filenames_clonex)):
-                if name_scores[i][1] == max_score:
-                    final_nft = name_scores[i][0][:-4]
-                    st.subheader(final_nft)
+            if max_score < 0.8:
+                st.subheader('Please upload a better quality image!')
+            else:
+                for i in range(len(filenames_clonex)):
+                    if name_scores[i][1] == max_score:
+                        final_nft = name_scores[i][0][:-4]
+                        st.subheader(final_nft)
 
 
 if selected_collection == 'MAYC':
@@ -242,11 +254,13 @@ if selected_collection == 'MAYC':
                 name_scores.append(name_score)
 
             max_score = max(scores)
-
-            for i in range(len(filenames_mayc)):
-                if name_scores[i][1] == max_score:
-                    final_nft = name_scores[i][0][:-4]
-                    st.subheader(final_nft)
+            if max_score < 0.8:
+                st.subheader('Please upload a better quality image!')
+            else:
+                for i in range(len(filenames_mayc)):
+                    if name_scores[i][1] == max_score:
+                        final_nft = name_scores[i][0][:-4]
+                        st.subheader(final_nft)
 
 
 if selected_collection == 'Cool Cats':
@@ -274,11 +288,13 @@ if selected_collection == 'Cool Cats':
                 name_scores.append(name_score)
 
             max_score = max(scores)
-
-            for i in range(len(filenames_cc)):
-                if name_scores[i][1] == max_score:
-                    final_nft = name_scores[i][0][:-4]
-                    st.subheader(final_nft)
+            if max_score < 0.8:
+                st.subheader('Please upload a better quality image!')
+            else:
+                for i in range(len(filenames_cc)):
+                    if name_scores[i][1] == max_score:
+                        final_nft = name_scores[i][0][:-4]
+                        st.subheader(final_nft)
 
 
 if selected_collection == 'Pudgy Penguins':
@@ -306,8 +322,10 @@ if selected_collection == 'Pudgy Penguins':
                 name_scores.append(name_score)
 
             max_score = max(scores)
-
-            for i in range(len(filenames_pudpen)):
-                if name_scores[i][1] == max_score:
-                    final_nft = name_scores[i][0][:-4]
-                    st.subheader(final_nft)
+            if max_score < 0.8:
+                st.subheader('Please upload a better quality image!')
+            else:
+                for i in range(len(filenames_pudpen)):
+                    if name_scores[i][1] == max_score:
+                        final_nft = name_scores[i][0][:-4]
+                        st.subheader(final_nft)

@@ -332,7 +332,7 @@ if selected_collection == 'Pudgy Penguins':
 
 
 if selected_collection == 'CryptoPunks':
-    filenames_punk = os.listdir('CryptoPunks')
+    filenames_punk = os.listdir('Punks')
 
     if uploaded_img is not None:
 
@@ -341,13 +341,13 @@ if selected_collection == 'CryptoPunks':
             st.image(display_img, width=200)
 
             img1 = cv2.imread(os.path.join('Uploads', uploaded_img.name), 0)
-            resized_img = resize(img1, (336, 336), anti_aliasing=True, preserve_range=True)
+            resized_img = resize(img1, (128, 128), anti_aliasing=True, preserve_range=True)
 
             name_scores = []
             scores = []
 
             for name in filenames_punk:
-                img = cv2.imread(os.path.join('CryptoPunks', name), 0)
+                img = cv2.imread(os.path.join('Punks', name), 0)
                 ssim = structural_sim(img, resized_img)
 
                 name_score = (name, ssim)

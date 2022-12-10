@@ -21,7 +21,7 @@ def structural_sim(img1, img2):
 
 st.title('JPEG to NFT # Finder')
 
-nft_collections = ['Azuki', 'Moonbirds', 'Doodles', 'BAYC', 'WoW', 'CloneX', 'MAYC', 'Cool Cats', 'Pudgy Penguins']
+nft_collections = ['Azuki', 'Moonbirds', 'Doodles', 'BAYC', 'WoW', 'CloneX', 'MAYC', 'Cool Cats', 'Pudgy Penguins', 'CryptoPunks']
 
 selected_collection = st.selectbox('Select Collection', nft_collections)
 
@@ -326,6 +326,40 @@ if selected_collection == 'Pudgy Penguins':
                 st.subheader('Please upload a better quality image!')
             else:
                 for i in range(len(filenames_pudpen)):
+                    if name_scores[i][1] == max_score:
+                        final_nft = name_scores[i][0][:-4]
+                        st.subheader(final_nft)
+
+
+if selected_collection == 'CryptoPunks':
+    filenames_punk = os.listdir('CryptoPunks')
+
+    if uploaded_img is not None:
+
+        if save_uploaded_image(uploaded_img):
+            display_img = Image.open(uploaded_img)
+            st.image(display_img, width=200)
+
+            img1 = cv2.imread(os.path.join('Uploads', uploaded_img.name), 0)
+            resized_img = resize(img1, (336, 336), anti_aliasing=True, preserve_range=True)
+
+            name_scores = []
+            scores = []
+
+            for name in filenames_punk:
+                img = cv2.imread(os.path.join('CryptoPunks', name), 0)
+                ssim = structural_sim(img, resized_img)
+
+                name_score = (name, ssim)
+                scores.append(ssim)
+
+                name_scores.append(name_score)
+
+            max_score = max(scores)
+            if max_score < 0.8:
+                st.subheader('Please upload a better quality image!')
+            else:
+                for i in range(len(filenames_punk)):
                     if name_scores[i][1] == max_score:
                         final_nft = name_scores[i][0][:-4]
                         st.subheader(final_nft)

@@ -2,4 +2,8 @@ opencv-python-headless
 Pillow==9.3.0
 scikit_image==0.19.2
 streamlit==1.8.1
+<<<<<<< HEAD
+=======
+moralis
+>>>>>>> fd63d25eddb79ed3219a9a3caae2741ed85b0ac7
 protobuf==3.20.*

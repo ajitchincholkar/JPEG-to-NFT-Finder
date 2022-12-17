@@ -5,10 +5,6 @@ from skimage.metrics import structural_similarity
 from skimage.transform import resize
 import os
 from moralis import evm_api
-from dotenv import load_dotenv
-
-load_dotenv()
-api_key = os.getenv("api_key")
 
 
 def save_uploaded_image(uploaded_img):
@@ -19,10 +15,13 @@ def save_uploaded_image(uploaded_img):
     except:
         return False
 
+
 def structural_sim(img1, img2):
     sim, diff = structural_similarity(img1, img2, full=True)
     return sim
 
+
+api_key = "RCyfQG6HDAi4RCRdLxz8t6ASemSW2SX8b54HmpzylhsR55PIFYyVcXI0N7sLGoW9"
 
 def get_nft_owner(address, token_id):
     params = {

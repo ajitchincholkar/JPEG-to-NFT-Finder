@@ -4,10 +4,6 @@ from PIL import Image
 from skimage.metrics import structural_similarity
 from skimage.transform import resize
 import os
-<<<<<<< HEAD
-from moralis import evm_api
-=======
->>>>>>> parent of 62b2092b8 (Owner feature added)
 
 
 def save_uploaded_image(uploaded_img):
@@ -18,34 +14,10 @@ def save_uploaded_image(uploaded_img):
     except:
         return False
 
-
 def structural_sim(img1, img2):
     sim, diff = structural_similarity(img1, img2, full=True)
     return sim
 
-<<<<<<< HEAD
-
-api_key = "RCyfQG6HDAi4RCRdLxz8t6ASemSW2SX8b54HmpzylhsR55PIFYyVcXI0N7sLGoW9"
-
-def get_nft_owner(address, token_id):
-    params = {
-        "address": address,
-        "token_id": token_id,
-        "chain": "eth",
-        "format": "decimal",
-        "normalizeMetadata": True,
-    }
-
-    result = evm_api.nft.get_nft_metadata(
-        api_key=api_key,
-        params=params,
-    )
-
-    owner = result['owner_of']
-    return owner
-
-=======
->>>>>>> parent of 62b2092b8 (Owner feature added)
 
 st.title('JPEG to NFT # Finder')
 
@@ -94,11 +66,11 @@ if selected_collection == 'Azuki':
                         opensea_link = f'https://opensea.io/assets/ethereum/0xed5af388653567af2f388e6224dc7c4b3241c544/{nft_num}'
                         rarity_link = f'https://rarity.tools/azuki/view/{nft_num}'
 
-            with col1:
-                st.subheader(final_nft)
-            with col2:
-                st.subheader("Check on [Opensea](%s)" % opensea_link)
-                st.subheader("Check [Rarity Score](%s)" % rarity_link)
+                        with col1:
+                            st.subheader(final_nft)
+                        with col2:
+                            st.subheader("Check on [Opensea](%s)" % opensea_link)
+                            st.subheader("Check [Rarity Score](%s)" % rarity_link)
 
 
 if selected_collection == 'Doodles':
@@ -140,11 +112,11 @@ if selected_collection == 'Doodles':
                         opensea_link = f'https://opensea.io/assets/ethereum/0x8a90cab2b38dba80c64b7734e58ee1db38b8992e/{nft_num}'
                         rarity_link = f'https://rarity.tools/doodles-official/view/{nft_num}'
 
-            with col1:
-                st.subheader(final_nft)
-            with col2:
-                st.subheader("Check on [Opensea](%s)" % opensea_link)
-                st.subheader("Check [Rarity Score](%s)" % rarity_link)
+                        with col1:
+                            st.subheader(final_nft)
+                        with col2:
+                            st.subheader("Check on [Opensea](%s)" % opensea_link)
+                            st.subheader("Check [Rarity Score](%s)" % rarity_link)
 
 
 if selected_collection == 'Moonbirds':
@@ -186,11 +158,11 @@ if selected_collection == 'Moonbirds':
                         opensea_link = f'https://opensea.io/assets/ethereum/0x23581767a106ae21c074b2276d25e5c3e136a68b/{nft_num}'
                         rarity_link = f'https://rarity.tools/proof-moonbirds/view/{nft_num}'
 
-            with col1:
-                st.subheader(final_nft)
-            with col2:
-                st.subheader("Check on [Opensea](%s)" % opensea_link)
-                st.subheader("Check [Rarity Score](%s)" % rarity_link)
+                        with col1:
+                            st.subheader(final_nft)
+                        with col2:
+                            st.subheader("Check on [Opensea](%s)" % opensea_link)
+                            st.subheader("Check [Rarity Score](%s)" % rarity_link)
 
 
 if selected_collection == 'BAYC':
@@ -232,11 +204,11 @@ if selected_collection == 'BAYC':
                         opensea_link = f'https://opensea.io/assets/ethereum/0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d/{nft_num}'
                         rarity_link = f'https://rarity.tools/boredapeyachtclub/view/{nft_num}'
 
-            with col1:
-                st.subheader(final_nft)
-            with col2:
-                st.subheader("Check on [Opensea](%s)" % opensea_link)
-                st.subheader("Check [Rarity Score](%s)" % rarity_link)
+                        with col1:
+                            st.subheader(final_nft)
+                        with col2:
+                            st.subheader("Check on [Opensea](%s)" % opensea_link)
+                            st.subheader("Check [Rarity Score](%s)" % rarity_link)
 
 
 if selected_collection == 'WoW':
@@ -278,11 +250,11 @@ if selected_collection == 'WoW':
                         opensea_link = f'https://opensea.io/assets/ethereum/0xe785e82358879f061bc3dcac6f0444462d4b5330/{nft_num}'
                         rarity_link = f'https://rarity.tools/world-of-women-nft/view/{nft_num}'
 
-            with col1:
-                st.subheader(final_nft)
-            with col2:
-                st.subheader("Check on [Opensea](%s)" % opensea_link)
-                st.subheader("Check [Rarity Score](%s)" % rarity_link)
+                        with col1:
+                            st.subheader(final_nft)
+                        with col2:
+                            st.subheader("Check on [Opensea](%s)" % opensea_link)
+                            st.subheader("Check [Rarity Score](%s)" % rarity_link)
 
 
 if selected_collection == 'CloneX':
@@ -324,11 +296,11 @@ if selected_collection == 'CloneX':
                         opensea_link = f'https://opensea.io/assets/ethereum/0x49cf6f5d44e70224e2e23fdcdd2c053f30ada28b/{nft_num}'
                         rarity_link = f'https://rarity.tools/clonex/view/{nft_num}'
 
-            with col1:
-                st.subheader(final_nft)
-            with col2:
-                st.subheader("Check on [Opensea](%s)" % opensea_link)
-                st.subheader("Check [Rarity Score](%s)" % rarity_link)
+                        with col1:
+                            st.subheader(final_nft)
+                        with col2:
+                            st.subheader("Check on [Opensea](%s)" % opensea_link)
+                            st.subheader("Check [Rarity Score](%s)" % rarity_link)
 
 
 if selected_collection == 'MAYC':
@@ -370,11 +342,11 @@ if selected_collection == 'MAYC':
                         opensea_link = f'https://opensea.io/assets/ethereum/0x60e4d786628fea6478f785a6d7e704777c86a7c6/{nft_num}'
                         rarity_link = f'https://rarity.tools/mutant-ape-yacht-club/view/{nft_num}'
 
-            with col1:
-                st.subheader(final_nft)
-            with col2:
-                st.subheader("Check on [Opensea](%s)" % opensea_link)
-                st.subheader("Check [Rarity Score](%s)" % rarity_link)
+                        with col1:
+                            st.subheader(final_nft)
+                        with col2:
+                            st.subheader("Check on [Opensea](%s)" % opensea_link)
+                            st.subheader("Check [Rarity Score](%s)" % rarity_link)
 
 
 if selected_collection == 'Cool Cats':
@@ -416,11 +388,11 @@ if selected_collection == 'Cool Cats':
                         opensea_link = f'https://opensea.io/assets/ethereum/0x1a92f7381b9f03921564a437210bb9396471050c/{nft_num}'
                         rarity_link = f'https://rarity.tools/cool-cats-nft/view/{nft_num}'
 
-            with col1:
-                st.subheader(final_nft)
-            with col2:
-                st.subheader("Check on [Opensea](%s)" % opensea_link)
-                st.subheader("Check [Rarity Score](%s)" % rarity_link)
+                        with col1:
+                            st.subheader(final_nft)
+                        with col2:
+                            st.subheader("Check on [Opensea](%s)" % opensea_link)
+                            st.subheader("Check [Rarity Score](%s)" % rarity_link)
 
 
 if selected_collection == 'Pudgy Penguins':
@@ -462,11 +434,11 @@ if selected_collection == 'Pudgy Penguins':
                         opensea_link = f'https://opensea.io/assets/ethereum/0xbd3531da5cf5857e7cfaa92426877b022e612cf8/{nft_num}'
                         rarity_link = f'https://rarity.tools/pudgypenguins/view/{nft_num}'
 
-            with col1:
-                st.subheader(final_nft)
-            with col2:
-                st.subheader("Check on [Opensea](%s)" % opensea_link)
-                st.subheader("Check [Rarity Score](%s)" % rarity_link)
+                        with col1:
+                            st.subheader(final_nft)
+                        with col2:
+                            st.subheader("Check on [Opensea](%s)" % opensea_link)
+                            st.subheader("Check [Rarity Score](%s)" % rarity_link)
 
 
 if selected_collection == 'CryptoPunks':
@@ -508,8 +480,8 @@ if selected_collection == 'CryptoPunks':
                         opensea_link = f'https://opensea.io/assets/ethereum/0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb/{nft_num}'
                         rarity_link = f'https://rarity.tools/cryptopunks/view/{nft_num}'
 
-            with col1:
-                st.subheader(final_nft)
-            with col2:
-                st.subheader("Check on [Opensea](%s)" % opensea_link)
-                st.subheader("Check [Rarity Score](%s)" % rarity_link)
+                        with col1:
+                            st.subheader(final_nft)
+                        with col2:
+                            st.subheader("Check on [Opensea](%s)" % opensea_link)
+                            st.subheader("Check [Rarity Score](%s)" % rarity_link)

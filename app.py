@@ -8,6 +8,7 @@ from moralis import evm_api
 from dotenv import load_dotenv
 
 load_dotenv()
+api_key = os.getenv("api_key")
 
 
 def save_uploaded_image(uploaded_img):
@@ -22,7 +23,6 @@ def structural_sim(img1, img2):
     sim, diff = structural_similarity(img1, img2, full=True)
     return sim
 
-api_key = os.getenv("api_key")
 
 def get_nft_owner(address, token_id):
     params = {

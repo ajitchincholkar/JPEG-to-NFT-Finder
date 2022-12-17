@@ -4,7 +4,7 @@ from PIL import Image
 from skimage.metrics import structural_similarity
 from skimage.transform import resize
 import os
-from moralis import evm_api
+#from moralis import evm_api
 
 
 def save_uploaded_image(uploaded_img):
@@ -20,7 +20,7 @@ def structural_sim(img1, img2):
     sim, diff = structural_similarity(img1, img2, full=True)
     return sim
 
-
+"""
 api_key = "RCyfQG6HDAi4RCRdLxz8t6ASemSW2SX8b54HmpzylhsR55PIFYyVcXI0N7sLGoW9"
 
 def get_nft_owner(address, token_id):
@@ -39,7 +39,7 @@ def get_nft_owner(address, token_id):
 
     owner = result['owner_of']
     return owner
-
+"""
 
 st.title('JPEG to NFT # Finder')
 
@@ -87,8 +87,8 @@ if selected_collection == 'Azuki':
 
                         opensea_link = f'https://opensea.io/assets/ethereum/0xed5af388653567af2f388e6224dc7c4b3241c544/{nft_num}'
                         rarity_link = f'https://rarity.tools/azuki/view/{nft_num}'
-                        owner = get_nft_owner('0xed5af388653567af2f388e6224dc7c4b3241c544', nft_num)
-                        owner_link = f'https://opensea.io/{owner}'
+                        #owner = get_nft_owner('0xed5af388653567af2f388e6224dc7c4b3241c544', nft_num)
+                        #owner_link = f'https://opensea.io/{owner}'
 
                         with col1:
                             st.subheader(final_nft)
@@ -96,7 +96,7 @@ if selected_collection == 'Azuki':
                             st.subheader("Check on [Opensea](%s)" % opensea_link)
                             st.subheader("Check [Rarity Score](%s)" % rarity_link)
 
-                        st.subheader(f"Owner : [{owner}]({owner_link})")
+                        #st.subheader(f"Owner : [{owner}]({owner_link})")
 
 
 if selected_collection == 'Doodles':

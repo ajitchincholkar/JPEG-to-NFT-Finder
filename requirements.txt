@@ -1,6 +1,5 @@
 opencv-python-headless
 Pillow==9.3.0
 scikit_image==0.19.2
-streamlit==1.5.1
-moralis
+streamlit==1.8.1
 protobuf==3.20.*
